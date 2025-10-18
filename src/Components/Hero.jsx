@@ -20,7 +20,14 @@ function Hero(){
                 Multifacet Creative with <span className="font-bold">600k+</span> followers across all platforms
             </motion.p>
 
-            <a className="font-bold text-white border-white border rounded-full p-3 hover:scale-105 transition-all duration-500">Book Now</a>
+            <motion.a
+                initial={{opacity:0, x:100}}
+                animate={{opacity:1, x:0}}
+                transition={{duration: 1}}
+                className="font-bold text-white border-white border rounded-full p-3 hover:scale-105 transition-transform duration-300"
+            >
+                Book Now
+            </motion.a>
         </div>
     );
 }

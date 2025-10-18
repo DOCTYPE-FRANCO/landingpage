@@ -13,7 +13,7 @@ function Homepage(){
             <Hero />
 
             <div className="mt-7 flex flex-row md:gap-20 justify-center ">
-                <div className="flex justify-centerw-[100px] h-[100px] rounded-full overflow-hidden">
+                <div className="flex justify-center w-[100px] h-[100px] rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 ">
                     <img src={Sonia} loading="lazy" className="w-full h-full object-top"/>
                 </div>
 
