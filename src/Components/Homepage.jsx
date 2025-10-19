@@ -8,7 +8,6 @@ import Youtube from "../assets/yt.png"
 import { Target, Goal } from "lucide-react";
 
 
-
 function Homepage(){
     const [formData, setFormData] = useState({
         name: "",
@@ -26,25 +25,25 @@ function Homepage(){
 
     function handleSubmit(e){
         e.preventDefault()
-        sendEmail(e);
+        
         setFormData({name : "", email: "", message: ""})
     }
     return(
         <div className="flex flex-col">
             <Hero />
 
-            <div className="mt-7 flex flex-row md:gap-20 justify-center ">
+            <div className="mt-7 flex items-center md:items-start flex-col md:flex-row md:gap-20 justify-center ">
                 <div className="flex justify-center w-[100px] h-[100px] rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 ">
                     <img src={Sonia} loading="lazy" className="w-full h-full object-top"/>
                 </div>
 
                 <div>
                     <p className="text-2xl font-extrabold text-left mb-4">Dike Sonia</p>
-                    <p className="font-semibold text-left max-w-[450px]">Hi, i'm Dike Sonia aka <span className="font-bold">@soniatherotationqueen</span>.<br/> A versatile content creator blending creativity, strategy, and authenticity to connect with a vibrant and growing audience.</p>
+                    <p className="font-semibold text-left max-w-[380px] md:max-w-[450px]">Hi, i'm Dike Sonia aka <span className="font-bold">@soniatherotationqueen</span>.<br/> A versatile content creator blending creativity, strategy, and authenticity to connect with a vibrant and growing audience.</p>
                 </div>
             </div>
 
-            <div className="flex flex-row gap-10 justify-center mt-10">
+            <div className="flex flex-col items-center md:items-start md:flex-row gap-10 justify-center mt-10">
                 <div className=" flex flex-col gap-3 justify-center items-center w-[200px] h-[200px] shadow-2xl shadow-gray-400 rounded-md">
                     <p className="font-bold text-2xl">560K +</p>
 
@@ -80,7 +79,7 @@ function Homepage(){
             </div>
 
 
-            <section className="flex flex-col justify-center items-center shadow-2xl shadow-gray-500 mt-20 mb-20 w-[60vw] md:h-[280px] mx-auto rounded-md ">
+            <section className="flex flex-col justify-center items-center shadow-2xl shadow-gray-500 mt-20 mb-20 w-[80vw] md:w-[60vw] md:h-[280px] mx-auto rounded-md p-5 md:p-0">
                 <div className="flex flex-row justify-center gap-3 mt-10">
                     <Target color="#000000" />
                     <p className="text-2xl font-bold text-black">Why Work with Me</p>
@@ -106,9 +105,9 @@ function Homepage(){
                 </section>
             </section>
 
-            <div id="Book" className="bg-white mb-10 w-[300px] h-[390px] md:w-[600px] md:h-[430px] rounded-2xl mx-auto shadow-purple-400 shadow-2xl">
+            <div id="Book" className="bg-white mb-10 w-[300px] h-[450px] md:w-[600px] md:h-[430px] rounded-2xl mx-auto shadow-gray-500 shadow-2xl">
                 <p className="text-center text-2xl text-black font-thin">Fill out the form below to request Sonia's availability</p>
-                <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center mt-5 gap-2">
+                <form action="https://formspree.io/f/xjkazwnn" method="post" className="flex flex-col justify-center items-center mt-5 gap-2">
                     <label className="flex flex-col font-bold text-black">
                         Name
                         <input

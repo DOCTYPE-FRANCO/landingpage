@@ -4,7 +4,7 @@ import HeroVideo from "../assets/herovid.mp4";
 
 function Hero(){
     return(
-        <div className="relative h-[300px] w-full overflow-hidden">
+        <div className="relative h-[700px] md:h-[300px] w-full overflow-hidden">
             {/* video background */}
             <video
                 src={HeroVideo}
@@ -26,7 +26,7 @@ function Hero(){
                     initial={{opacity:0, x:-100}}
                     animate={{opacity:1, x:0}}
                     transition={{duration: 2}}
-                    className="font-extrabold text-white md:text-5xl max-w-[40vw] text-center"
+                    className="font-extrabold text-white text-4xl md:text-5xl max-w-[80vw] md:max-w-[40vw] text-center"
                 >
                     Book Sonia for Your Next Project
                 </motion.p>
@@ -35,17 +35,17 @@ function Hero(){
                     initial={{opacity:0, x:100}}
                     animate={{opacity:1, x:0}}
                     transition={{duration: 2}}
-                    className="font-thin text-white text-2xl max-w-[35vw] text-center"
+                    className="font-thin text-white max-w-[50vw] md:text-2xl md:max-w-[35vw] text-center"
                 >
                     Multifacet Creative with <span className="font-bold">600k+</span> followers across all platforms
                 </motion.p>
 
                 <motion.a
                     href="#Book"
-                    initial={{opacity:0, x:100}}
+                    initial={{opacity:0, x:20}}
                     animate={{opacity:1, x:0}}
                     transition={{duration: 1}}
-                    className="font-bold text-white bg-black rounded-full p-3 hover:scale-105 transition-transform duration-300"
+                    className="mt-10 md:mt-0 font-bold text-white bg-black rounded-full p-3 px-10 hover:scale-105 transition-transform duration-300"
                 >
                     Book Now
                 </motion.a>
