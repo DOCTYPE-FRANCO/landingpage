@@ -89,7 +89,7 @@ function Homepage(){
                 <section className="flex flex-col gap-3 items-start justify-self-center mt-10">
                     <div className="flex flex-row gap-5">
                         <Goal color="#000000"/>
-                        <p className="text-black">Proven ability to engage and grow audiences</p>
+                        <p className="text-black">Proven ability to engage and grow audiences</p>
                     </div>
 
 
