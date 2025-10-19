@@ -37,7 +37,7 @@ function Hero(){
                     transition={{duration: 2}}
                     className="font-thin text-white max-w-[50vw] md:text-2xl md:max-w-[35vw] text-center"
                 >
-                    Multifacet Creative with <span className="font-bold">600k+</span> followers across all platforms
+                    Multifaceted Creative with <span className="font-bold">600k+</span> followers across all platforms
                 </motion.p>
 
                 <motion.a
