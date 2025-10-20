@@ -29,7 +29,7 @@ function Homepage(){
         setFormData({name : "", email: "", message: ""})
     }
     return(
-        <div className="flex flex-col">
+        <div className="flex flex-col z-10 relative">
             <Hero />
 
             <div className="mt-7 flex items-center md:items-start flex-col md:flex-row md:gap-20 justify-center mx-auto">
