@@ -79,7 +79,7 @@ function Homepage(){
             </div>
 
 
-            <section className="flex flex-col justify-center items-center shadow-2xl shadow-gray-500 mt-20 mb-20 w-[80vw] md:w-[60vw] md:h-[280px] mx-auto rounded-md p-5 md:p-0">
+            <section className="flex flex-col justify-center items-center shadow-2xl shadow-gray-500 mt-20 mb-20 w-[80vw] md:w-[45vw] md:h-[280px] mx-auto rounded-md p-5 md:p-0 bg-white">
                 <div className="flex flex-row justify-center gap-3 mt-10">
                     <Target color="#000000" />
                     <p className="text-2xl font-bold text-black">Why Work with Me</p>
