@@ -1,8 +1,9 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, {useRef, useEffect} from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import HeroVideo from "../assets/herovid.mp4";
 
 function Hero(){
+    const ref = useRef(null);
     return(
         <div className="relative h-[700px] md:h-[300px] w-full overflow-hidden">
             {/* video background */}
