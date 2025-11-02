@@ -13,6 +13,24 @@ function Homepage(){
     const ref = useRef(null);
     const isInView = useInView(ref);
     const mainControls = useAnimation();
+    const variants =    {
+                            hidden:{opacity: 0, x: 75},
+                            visible:{opacity: 1, x: 0 }
+                        };
+    const variants2 =    {
+                            hidden:{opacity: 0, y: 75},
+                            visible:{opacity: 1, y: 0 }
+                        };                
+
+
+
+
+    useEffect(() =>{
+        if(isInView){
+            mainControls.start("visible");
+        }
+    },[isInView]);
+
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -48,12 +66,23 @@ function Homepage(){
             </div>
 
             <motion.div
+                ref={ref}
+                initial="hidden"
+                animate={mainControls}
                 variants={{
-                    hidden:{opacity: 0, x: 75}
+                    hidden: { opacity: 0 },
+                    visible: {
+                    opacity: 1,
+                    transition: { staggerChildren: 1 }
+                    }
                 }}
+
                 className="flex flex-col items-center md:items-start md:flex-row gap-10 justify-center mt-10"
             >
-                <div className=" flex flex-col gap-3 justify-center items-center w-[200px] h-[200px] shadow-2xl shadow-gray-400 rounded-md">
+                <motion.div
+                    variants={variants}
+                    className=" flex flex-col gap-3 justify-center items-center w-[200px] h-[200px] shadow-2xl shadow-gray-400 rounded-md"
+                >
                     <p className="font-bold text-2xl">560K +</p>
 
                     <div className="flex flex-row justify-center items-center">
@@ -62,9 +91,12 @@ function Homepage(){
                         </div>
                         <p className="font-bold">Tiktok</p>
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="flex flex-col gap-3 justify-center items-center w-[200px] h-[200px] shadow-2xl shadow-gray-400 rounded-md">
+                <motion.div
+                    variants={variants}
+                    className="flex flex-col gap-3 justify-center items-center w-[200px] h-[200px] shadow-2xl shadow-gray-400 rounded-md"
+                >
                     <p className="font-bold text-2xl">48K +</p>
 
                     <div className="flex flex-row justify-center items-center">
@@ -73,9 +105,12 @@ function Homepage(){
                         </div>
                         <p className="font-bold">Instagram</p>
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="flex flex-col gap-3 justify-center items-center w-[200px] h-[200px] shadow-2xl shadow-gray-400 rounded-md">
+                <motion.div
+                    variants={variants} 
+                    className="flex flex-col gap-3 justify-center items-center w-[200px] h-[200px] shadow-2xl shadow-gray-400 rounded-md"
+                >
                     
                     <p className="font-bold text-2xl">10K +</p>
                     <div className="flex flex-row justify-center items-center">
@@ -84,35 +119,44 @@ function Homepage(){
                         </div>
                         <p className="font-bold">Youtube</p>
                     </div>
-                </div>
+                </motion.div>
             </motion.div>
 
 
-            <section className="flex flex-col justify-center items-center shadow-2xl shadow-gray-500 mt-20 mb-20 w-[80vw] md:w-[45vw] md:h-[280px] mx-auto rounded-md p-5 md:p-0 bg-white">
-                <div className="flex flex-row justify-center gap-3 mt-10">
+            <motion.section
+                initial="hidden"
+                animate={mainControls}
+                ref={ref}
+                variants={{
+                    hidden:{opacity: 0},
+                    visible: {opacity: 1, transition:{staggerChildren: 0.5}}
+                }}
+                className="flex flex-col justify-center items-center shadow-2xl shadow-gray-500 mt-20 mb-20 w-[80vw] md:w-[45vw] md:h-[280px] mx-auto rounded-md p-5 md:p-0 bg-white"
+            >
+                <motion.div variants={variants2} className="flex flex-row justify-center gap-3 mt-10">
                     <Target color="#000000" />
                     <p className="text-2xl font-bold text-black">Why Work with Me</p>
-                </div>
+                </motion.div>
 
                 <section className="flex flex-col gap-3 items-start justify-self-center mt-10">
-                    <div className="flex flex-row gap-5">
+                    <motion.div variants={variants2} className="flex flex-row gap-5">
                         <Goal color="#000000"/>
                         <p className="text-black">Proven ability to engage and grow audiences</p>
-                    </div>
+                    </motion.div>
 
 
-                    <div className="flex flex-row gap-5">
+                    <motion.div variants={variants2} className="flex flex-row gap-5">
                         <Goal color="#000000"/>
                         <p className="text-black">Creative collaboration that aligns with your vision</p>
-                    </div>
+                    </motion.div>
 
                     
-                    <div className="flex flex-row gap-5">
+                    <motion.div variants={variants2} className="flex flex-row gap-5">
                         <Goal color="#000000"/>
                         <p className="text-black">Professional and timely communication</p>
-                    </div>
+                    </motion.div>
                 </section>
-            </section>
+            </motion.section>
 
             <div id="Book" className="bg-white mb-10 w-[300px] h-[450px] md:w-[600px] md:h-[430px] rounded-2xl mx-auto shadow-gray-500 shadow-2xl">
                 <p className="text-center text-2xl text-black font-thin">Fill out the form below to request Sonia's availability</p>
