@@ -11,8 +11,11 @@ import { motion, useAnimation, useInView } from "framer-motion";
 
 function Homepage(){
     const ref = useRef(null);
+    const ref2 = useRef(null);
     const isInView = useInView(ref);
+    const isInView2 = useInView(ref2);
     const mainControls = useAnimation();
+    const mainControls2 = useAnimation();
     const variants =    {
                             hidden:{opacity: 0, x: 75},
                             visible:{opacity: 1, x: 0 }
@@ -30,6 +33,12 @@ function Homepage(){
             mainControls.start("visible");
         }
     },[isInView]);
+
+    useEffect(() =>{
+        if(isInView2){
+            mainControls2.start("visible");
+        }
+    },[isInView2]);
 
     const [formData, setFormData] = useState({
         name: "",
@@ -125,8 +134,8 @@ function Homepage(){
 
             <motion.section
                 initial="hidden"
-                animate={mainControls}
-                ref={ref}
+                animate={mainControls2}
+                ref={ref2}
                 variants={{
                     hidden:{opacity: 0},
                     visible: {opacity: 1, transition:{staggerChildren: 0.5}}

@@ -5,7 +5,7 @@ import HeroVideo from "../assets/herovid.mp4";
 function Hero(){
     
     return(
-        <div className="relative h-[700px] md:h-[300px] w-full overflow-hidden">
+        <div className="relative h-[700px] md:h-[500px] w-full overflow-hidden">
             {/* video background */}
             <video
                 src={HeroVideo}
