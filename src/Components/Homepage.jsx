@@ -47,7 +47,12 @@ function Homepage(){
                 </div>
             </div>
 
-            <div className="flex flex-col items-center md:items-start md:flex-row gap-10 justify-center mt-10">
+            <motion.div
+                variants={{
+                    hidden:{opacity: 0, x: 75}
+                }}
+                className="flex flex-col items-center md:items-start md:flex-row gap-10 justify-center mt-10"
+            >
                 <div className=" flex flex-col gap-3 justify-center items-center w-[200px] h-[200px] shadow-2xl shadow-gray-400 rounded-md">
                     <p className="font-bold text-2xl">560K +</p>
 
@@ -80,7 +85,7 @@ function Homepage(){
                         <p className="font-bold">Youtube</p>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
 
             <section className="flex flex-col justify-center items-center shadow-2xl shadow-gray-500 mt-20 mb-20 w-[80vw] md:w-[45vw] md:h-[280px] mx-auto rounded-md p-5 md:p-0 bg-white">
