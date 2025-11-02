@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import Hero from "./Hero";
 import Footer from "./Footer";
 import Sonia from "../assets/Sonia.jpg"
@@ -6,9 +6,13 @@ import Ig from "../assets/igg.png"
 import Tiktok from "../assets/tt.png"
 import Youtube from "../assets/yt.png"
 import { Target, Goal } from "lucide-react";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 
 function Homepage(){
+    const ref = useRef(null);
+    const isInView = useInView(ref);
+    const mainControls = useAnimation();
     const [formData, setFormData] = useState({
         name: "",
         email: "",
